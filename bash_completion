@@ -47,6 +47,11 @@ __nvm_commands() {
 
 __nvm_options() {
   OPTIONS=''
+
+  if [ ${#COMP_WORDS[@]} == 2 ]; then
+    OPTIONS='--version'
+  fi
+
   __nvm_generate_completion "${OPTIONS}"
 }
 
